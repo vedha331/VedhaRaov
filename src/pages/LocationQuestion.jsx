@@ -15,7 +15,7 @@ export default function LocationQuestion() {
     if (showThinking) {
       const timer = setTimeout(() => {
         setFactMessageShown(true);
-      }, 5000);
+      }, 10000);
       return () => clearTimeout(timer);
     }
   }, [showThinking]);
