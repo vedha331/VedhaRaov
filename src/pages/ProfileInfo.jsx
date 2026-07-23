@@ -30,13 +30,12 @@ export default function ProfileInfo() {
       timers.push(timer);
     });
 
-    const redirectTimer = setTimeout(() => {
-      navigate('/photo-secret');
-    }, profileData.length * 400 + 1000);
-    timers.push(redirectTimer);
-
     return () => timers.forEach(timer => clearTimeout(timer));
-  }, [navigate]);
+  }, []);
+
+  const regularItems = displayedInfo.slice(0, -1);
+  const lastItem = displayedInfo[displayedInfo.length - 1];
+  const showNextButton = displayedInfo.length === profileData.length;
 
   return (
     <PageShell className="profile-info-page">
@@ -46,7 +45,7 @@ export default function ProfileInfo() {
         </motion.h1>
 
         <motion.div className="info-container" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }}>
-          {displayedInfo.map((item, index) => (
+          {regularItems.map((item, index) => (
             <motion.div
               key={index}
               className="info-item"
@@ -61,18 +60,46 @@ export default function ProfileInfo() {
               </div>
             </motion.div>
           ))}
+
+          {lastItem && (
+            <div className="location-with-button">
+              <motion.div
+                className="info-item"
+                initial={{ opacity: 0, x: -30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ type: 'spring', stiffness: 100 }}
+              >
+                <span className="info-emoji">{lastItem.emoji}</span>
+                <div className="info-text">
+                  <span className="info-label">{lastItem.label}</span>
+                  <span className="info-value">{lastItem.value}</span>
+                </div>
+              </motion.div>
+
+              {showNextButton && (
+                <motion.button
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.5 }}
+                  className="next-button-beside"
+                  onClick={() => navigate('/photo-secret')}
+                >
+                  Next <span className="arrow">→</span>
+                </motion.button>
+              )}
+            </div>
+          )}
         </motion.div>
 
         {displayedInfo.length === profileData.length && (
-          <motion.div
+          <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.5 }}
+            transition={{ delay: 0.8 }}
+            className="completion-text"
           >
-            <p className="completion-text">
-              Profile loaded! ✨
-            </p>
-          </motion.div>
+            Profile loaded! ✨
+          </motion.p>
         )}
       </section>
     </PageShell>

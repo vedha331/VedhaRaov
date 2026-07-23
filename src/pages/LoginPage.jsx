@@ -29,7 +29,7 @@ export default function LoginPage() {
             animate={{ scale: 1, opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.5 }}
           >
-            <h1>✨ Welcome to Your Birthday Surprise ✨</h1>
+            <h1>✨Sweet Login✨</h1>
             <p className="login-subtitle">Let's make this moment special, tell us your name!</p>
             
             <form onSubmit={handleContinue}>
