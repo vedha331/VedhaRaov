@@ -20,6 +20,30 @@ h1 { font-family: 'Playfair Display', Georgia, serif; letter-spacing: -0.04em; l
 @keyframes float { 50% { transform: translateY(-17px) rotate(8deg); } } @keyframes twinkle { to { opacity: .2; transform: scale(.6); } } @keyframes flame { to { transform: rotate(39deg) scale(.85, 1.12); } }
 @media (max-width: 700px) { .home-layout { grid-template-columns: 1fr; gap: 15px; }.house-illustration { transform: scale(.78); height: 195px; margin-bottom: -15px; }.name-card { max-width: 500px; margin: auto; }.moon { width: 80px; height: 80px; right: 7%; }.cake-wrap { transform: scale(.88); margin: 0 0 -5px; }.cake-content h1 { font-size: clamp(2.8rem, 13vw, 4.4rem); }.surprise-card { padding: 42px 26px; }.surprise-card h1 { font-size: 2.6rem; }.landing-content h1 { font-size: clamp(2.7rem, 11vw, 4rem); } }
 
+/* Location Question Page */
+.location-page { background: linear-gradient(135deg, #fff7ed 0%, #fcecf6 52%, #eee4fa 100%); }
+.location-layout { width: 100%; display: flex; align-items: center; justify-content: center; }
+.location-card { background: #ffffffcf; backdrop-filter: blur(12px); border: 1px solid #fff; padding: clamp(30px, 5vw, 50px); border-radius: 30px; box-shadow: 0 24px 60px #a4689340; position: relative; width: min(500px, 100%); }
+.location-card h1 { font-size: clamp(2.2rem, 5vw, 3.5rem); color: #402244; }
+.location-card label { font-size: .82rem; font-weight: 700; color: #5e3d5e; display: block; margin-bottom: 8px; }
+.location-card input { width: 100%; border: 1px solid #ebcfe0; border-radius: 13px; padding: 15px; color: #482a4f; outline: none; margin-bottom: 18px; background: white; }
+.location-card input:focus { border-color: #e7659b; box-shadow: 0 0 0 4px #f9d8e7; }
+
+/* Location Thinking Page */
+.location-thinking-page { background: linear-gradient(135deg, #fff7ed 0%, #fcecf6 52%, #eee4fa 100%); }
+.thinking-layout { width: 100%; display: flex; align-items: center; justify-content: center; }
+.thinking-content { text-align: center; max-width: 600px; width: 90%; }
+.thinking-emoji { font-size: 5rem; margin-bottom: 24px; }
+.thinking-text { font-size: 1.35rem; color: #402244; font-weight: 600; margin: 24px 0; line-height: 1.6; }
+.thinking-text .highlight { color: #c44a7d; font-weight: 700; }
+.confirmation-text { font-size: 1.1rem; color: #775d77; margin: 16px 0 32px; line-height: 1.6; }
+.confirmation-text .highlight { color: #a24a6e; font-weight: 700; }
+.button-group { display: flex; gap: 20px; justify-content: center; align-items: center; flex-wrap: wrap; }
+.yes-btn { background: linear-gradient(110deg, #f05391, #ad52be) !important; padding: 17px 40px; }
+.no-btn { border: 2px solid #c44a7d; background: transparent; color: #c44a7d; border-radius: 999px; padding: 15px 35px; font-weight: 700; cursor: not-allowed; position: relative; }
+.secondary-button { border: 2px solid #c44a7d; background: transparent; color: #c44a7d; border-radius: 999px; padding: 15px 35px; font-weight: 700; cursor: not-allowed; }
+
+
 .blow-panel { min-height: 84px; }
 .countdown { display: grid; place-items: center; width: 76px; height: 76px; border: 2px solid #ffe69e; border-radius: 50%; background: #ffd56c; color: #3a2146; font: 700 3rem/1 'Playfair Display', serif; box-shadow: 0 0 35px #ffce61ad; }
 .final-card-page { padding-top: 24px; padding-bottom: 24px; }
@@ -51,3 +75,38 @@ h1 { font-family: 'Playfair Display', Georgia, serif; letter-spacing: -0.04em; l
 .final-card-hint { display: none; }
 .final-card-content .birthday-card-stage { width: min(460px, 90vw); height: min(660px, 82svh); margin: 0 auto; }
 .birthday-card-front img { object-fit: contain; background: #160d2f; }
+
+/* Location Question Page */
+.location-page { background: linear-gradient(135deg, #fff7ed 0%, #fcecf6 52%, #eee4fa 100%); }
+.location-layout { width: 100%; display: flex; align-items: center; justify-content: center; }
+.location-card { background: #ffffffcf; backdrop-filter: blur(12px); border: 1px solid #fff; padding: clamp(30px, 5vw, 50px); border-radius: 30px; box-shadow: 0 24px 60px #a4689340; position: relative; width: min(500px, 100%); }
+.location-card h1 { font-size: clamp(2.2rem, 5vw, 3.5rem); color: #402244; }
+.location-card label { font-size: .82rem; font-weight: 700; color: #5e3d5e; display: block; margin-bottom: 8px; }
+.location-card input { width: 100%; border: 1px solid #ebcfe0; border-radius: 13px; padding: 15px; color: #482a4f; outline: none; margin-bottom: 18px; background: white; }
+.location-card input:focus { border-color: #e7659b; box-shadow: 0 0 0 4px #f9d8e7; }
+.location-thinking-page { background: linear-gradient(135deg, #fff7ed 0%, #fcecf6 52%, #eee4fa 100%); }
+.thinking-layout { width: 100%; display: flex; align-items: center; justify-content: center; }
+.thinking-content { text-align: center; max-width: 600px; width: 90%; position: relative; }
+.thinking-emoji { font-size: 5rem; margin-bottom: 24px; }
+.thinking-text { font-size: 1.35rem; color: #402244; font-weight: 600; margin: 24px 0; line-height: 1.6; }
+.thinking-text .highlight { color: #c44a7d; font-weight: 700; }
+.confirmation-text { font-size: 1.1rem; color: #775d77; margin: 16px 0 32px; line-height: 1.6; }
+.confirmation-text .highlight { color: #a24a6e; font-weight: 700; }
+.button-group { display: flex; gap: 20px; justify-content: center; align-items: center; flex-wrap: wrap; position: relative; min-height: 80px; }
+.yes-btn { background: linear-gradient(110deg, #f05391, #ad52be) !important; padding: 17px 40px; position: absolute; }
+.no-btn { border: 2px solid #c44a7d; background: transparent; color: #c44a7d; border-radius: 999px; padding: 15px 35px; font-weight: 700; cursor: not-allowed; position: absolute; }
+.secondary-button { border: 2px solid #c44a7d; background: transparent; color: #c44a7d; border-radius: 999px; padding: 15px 35px; font-weight: 700; cursor: not-allowed; }
+.fact-message { text-align: center; margin-top: 40px; padding: 30px; background: #fff8f0; border-radius: 20px; box-shadow: 0 8px 32px #d8589540; position: relative; }
+.laugh-emoji { font-size: 4rem; margin-bottom: 16px; }
+.fact-text { font-size: 1.2rem; color: #402244; font-weight: 600; margin: 16px 0 24px; }
+.fact-text .highlight { color: #c44a7d; font-weight: 800; text-decoration: underline; }
+.profile-info-page { background: linear-gradient(135deg, #fff7ed 0%, #fcecf6 52%, #eee4fa 100%); }
+.info-layout { text-align: center; max-width: 600px; width: 90%; }
+.info-layout h1 { font-size: clamp(2rem, 5vw, 3rem); color: #402244; margin-bottom: 40px; }
+.info-container { display: flex; flex-direction: column; gap: 16px; }
+.info-item { background: #ffffffcf; backdrop-filter: blur(12px); border: 1px solid #fff; padding: 20px; border-radius: 20px; box-shadow: 0 8px 20px #a4689340; display: flex; align-items: center; gap: 16px; }
+.info-emoji { font-size: 2.5rem; }
+.info-text { flex: 1; text-align: left; }
+.info-label { display: block; font-size: .85rem; font-weight: 700; color: #7b5686; text-transform: uppercase; letter-spacing: .1em; }
+.info-value { display: block; font-size: 1.3rem; font-weight: 700; color: #402244; margin-top: 4px; }
+.completion-text { color: #c44a7d; font-weight: 700; margin-top: 24px; font-size: 1.1rem; }

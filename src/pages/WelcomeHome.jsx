@@ -11,7 +11,7 @@ export default function WelcomeHome() {
     const trimmed = name.trim();
     if (!trimmed) return;
     sessionStorage.setItem('birthday-name', trimmed);
-    navigate('/surprise');
+    navigate('/location');
   };
   return (
     <PageShell className="home-page">
