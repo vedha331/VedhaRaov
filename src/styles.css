@@ -92,9 +92,9 @@ h1 { font-family: 'Playfair Display', Georgia, serif; letter-spacing: -0.04em; l
 .thinking-text .highlight { color: #c44a7d; font-weight: 700; }
 .confirmation-text { font-size: 1.1rem; color: #775d77; margin: 16px 0 32px; line-height: 1.6; }
 .confirmation-text .highlight { color: #a24a6e; font-weight: 700; }
-.button-group { display: flex; gap: 20px; justify-content: center; align-items: center; flex-wrap: wrap; position: relative; min-height: 80px; }
-.yes-btn { background: linear-gradient(110deg, #f05391, #ad52be) !important; padding: 17px 40px; position: absolute; }
-.no-btn { border: 2px solid #c44a7d; background: transparent; color: #c44a7d; border-radius: 999px; padding: 15px 35px; font-weight: 700; cursor: not-allowed; position: absolute; }
+.button-group { display: flex; gap: 20px; justify-content: center; align-items: center; flex-wrap: wrap; position: relative; min-height: 80px; width: 100%; }
+.yes-btn { background: linear-gradient(110deg, #f05391, #ad52be) !important; padding: 17px 40px; position: relative; cursor: not-allowed; }
+.no-btn { border: 2px solid #c44a7d; background: transparent; color: #c44a7d; border-radius: 999px; padding: 15px 35px; font-weight: 700; cursor: not-allowed; position: relative; }
 .secondary-button { border: 2px solid #c44a7d; background: transparent; color: #c44a7d; border-radius: 999px; padding: 15px 35px; font-weight: 700; cursor: not-allowed; }
 .fact-message { text-align: center; margin-top: 40px; padding: 30px; background: #fff8f0; border-radius: 20px; box-shadow: 0 8px 32px #d8589540; position: relative; }
 .laugh-emoji { font-size: 4rem; margin-bottom: 16px; }
@@ -110,3 +110,36 @@ h1 { font-family: 'Playfair Display', Georgia, serif; letter-spacing: -0.04em; l
 .info-label { display: block; font-size: .85rem; font-weight: 700; color: #7b5686; text-transform: uppercase; letter-spacing: .1em; }
 .info-value { display: block; font-size: 1.3rem; font-weight: 700; color: #402244; margin-top: 4px; }
 .completion-text { color: #c44a7d; font-weight: 700; margin-top: 24px; font-size: 1.1rem; }
+.secret-message { text-align: center; margin-top: 40px; padding: 30px; background: linear-gradient(135deg, #fff0f8, #fde8f4); border: 2px dashed #c44a7d; border-radius: 20px; box-shadow: 0 8px 32px #d8589540; }
+.secret-emoji { font-size: 3.5rem; display: block; margin-bottom: 16px; }
+.secret-text { font-size: 1.25rem; color: #402244; font-weight: 700; margin: 16px 0 24px; line-height: 1.6; }
+.next-button { background: linear-gradient(110deg, #f05391, #ad52be); color: white; border: none; border-radius: 999px; padding: 14px 32px; font-weight: 700; font-size: 1rem; cursor: pointer; box-shadow: 0 8px 20px #d8589540; transition: transform 0.2s, box-shadow 0.2s; }
+.next-button:hover { transform: translateY(-2px); box-shadow: 0 12px 28px #d8589560; }
+.next-button:active { transform: translateY(0); }
+
+/* Photo Secret Page */
+.photo-secret-page { background: linear-gradient(135deg, #fff7ed 0%, #fcecf6 52%, #eee4fa 100%); }
+.secret-layout { width: 100%; display: flex; align-items: center; justify-content: center; }
+.secret-content { text-align: center; max-width: 600px; width: 90%; }
+.secret-emoji { font-size: 5rem; display: block; margin-bottom: 30px; }
+.secret-text { font-size: 1.4rem; color: #402244; font-weight: 600; margin: 0 0 40px; line-height: 1.8; }
+.next-button { background: linear-gradient(110deg, #f05391, #ad52be); color: white; border: none; padding: 15px 40px; border-radius: 999px; font-weight: 700; cursor: pointer; font-size: 1rem; transition: all 0.3s ease; box-shadow: 0 8px 20px #a4689340; }
+.next-button:hover { transform: translateY(-2px); box-shadow: 0 12px 28px #a4689350; }
+.next-button:active { transform: translateY(0); }
+
+/* Login Page */
+.login-page { background: linear-gradient(135deg, #fff7ed 0%, #fcecf6 52%, #eee4fa 100%); }
+.login-layout { width: 100%; display: flex; align-items: center; justify-content: center; padding: 20px; }
+.login-card { background: #ffffffcf; backdrop-filter: blur(12px); border: 1px solid #fff; padding: clamp(40px, 8vw, 60px); border-radius: 30px; box-shadow: 0 24px 60px #a4689340; max-width: 600px; width: 100%; text-align: center; }
+.login-card h1 { font-size: clamp(2rem, 5vw, 3rem); color: #402244; margin-bottom: 16px; line-height: 1.4; }
+.login-subtitle { font-size: 1.1rem; color: #775d77; margin: 0 0 30px; line-height: 1.6; }
+.login-card form { display: flex; flex-direction: column; gap: 20px; }
+.form-group { display: flex; flex-direction: column; gap: 8px; }
+.login-input { border: 2px solid #ebcfe0; border-radius: 15px; padding: 16px 18px; font-size: 1rem; color: #482a4f; outline: none; background: white; transition: all 0.3s ease; }
+.login-input:focus { border-color: #e7659b; box-shadow: 0 0 0 4px #f9d8e7; }
+.login-input::placeholder { color: #b8a0b8; }
+.login-button { background: linear-gradient(110deg, #f05391, #ad52be); color: white; border: none; padding: 16px 40px; border-radius: 999px; font-weight: 700; font-size: 1rem; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 8px 20px #a4689340; display: inline-flex; align-items: center; justify-content: center; gap: 8px; margin: 0 auto; }
+.login-button:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 12px 28px #a4689350; }
+.login-button:active:not(:disabled) { transform: translateY(0); }
+.login-button:disabled { opacity: 0.5; cursor: not-allowed; }
+.arrow { font-weight: 800; }

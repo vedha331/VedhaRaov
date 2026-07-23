@@ -8,26 +8,34 @@ export default function ProfileInfo() {
   const navigate = useNavigate();
 
   const profileData = [
-    { label: 'Blood', value: 'A+', emoji: '🩸' },
+    { label: 'Blood', value: 'universal', emoji: '🩸' },
     { label: 'Working', value: 'Software', emoji: '💻' },
-    { label: 'Others', value: 'Rider', emoji: '🏍️' },
+    { label: 'Hobbies', value: 'Rider', emoji: '🏍️' },
     { label: 'Qualities', value: 'Kind Hearted', emoji: '💖' },
     { label: 'Current Location', value: 'Hyderabad', emoji: '📍' },
   ];
 
   useEffect(() => {
+    const timers = [];
+    
     profileData.forEach((item, index) => {
-      setTimeout(() => {
-        setDisplayedInfo((prev) => [...prev, item]);
+      const timer = setTimeout(() => {
+        setDisplayedInfo((prev) => {
+          if (!prev.find(p => p.label === item.label)) {
+            return [...prev, item];
+          }
+          return prev;
+        });
       }, index * 400);
+      timers.push(timer);
     });
 
-    const totalTime = profileData.length * 400 + 1000;
-    const timer = setTimeout(() => {
-      navigate('/surprise');
-    }, totalTime);
+    const redirectTimer = setTimeout(() => {
+      navigate('/photo-secret');
+    }, profileData.length * 400 + 1000);
+    timers.push(redirectTimer);
 
-    return () => clearTimeout(timer);
+    return () => timers.forEach(timer => clearTimeout(timer));
   }, [navigate]);
 
   return (
@@ -56,14 +64,15 @@ export default function ProfileInfo() {
         </motion.div>
 
         {displayedInfo.length === profileData.length && (
-          <motion.p
-            className="completion-text"
+          <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
           >
-            All details loaded! ✨ Redirecting...
-          </motion.p>
+            <p className="completion-text">
+              Profile loaded! ✨
+            </p>
+          </motion.div>
         )}
       </section>
     </PageShell>

@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import confetti from 'canvas-confetti';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const message = [
   'Happy Birthday! I pray that God blesses you with good health, peace, happiness, and success in everything you do. May your life always be filled with hope, love, and countless beautiful moments.',
@@ -12,11 +13,15 @@ const message = [
 ];
 
 export default function BirthdayMessageCard({ name }) {
+  const navigate = useNavigate();
   const [flipped, setFlipped] = useState(false);
   const [hasPhoto, setHasPhoto] = useState(true);
   const celebrateAgain = (event) => {
     event.stopPropagation();
     confetti({ particleCount: 180, spread: 100, startVelocity: 42, origin: { y: 0.65 }, colors: ['#ffdc5d', '#ff7597', '#9e8cff', '#8cf3d2'] });
+    setTimeout(() => {
+      navigate('/celebration-completed');
+    }, 500);
   };
   return (
     <div className="birthday-card-stage">

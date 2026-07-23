@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import PageShell from '../components/PageShell';
 
@@ -10,6 +10,15 @@ export default function LocationQuestion() {
   const [yesButtonPos, setYesButtonPos] = useState({ x: 0, y: 0 });
   const [factMessageShown, setFactMessageShown] = useState(false);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (showThinking) {
+      const timer = setTimeout(() => {
+        setFactMessageShown(true);
+      }, 5000);
+      return () => clearTimeout(timer);
+    }
+  }, [showThinking]);
 
   const handleContinue = (event) => {
     event.preventDefault();
@@ -29,10 +38,15 @@ export default function LocationQuestion() {
     setYesButtonPos({ x: randomX, y: randomY });
   };
 
+  const moveNoButton = () => {
+    const randomX = Math.random() * 200 - 100;
+    const randomY = Math.random() * 150 - 75;
+    setNoButtonPos({ x: randomX, y: randomY });
+  };
+
   const handleButtonHover = () => {
     moveYesButton();
     moveNoButton();
-    setTimeout(() => setFactMessageShown(true), 500);
   };
 
   if (showThinking) {
